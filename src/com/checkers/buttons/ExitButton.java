@@ -1,20 +1,16 @@
 package com.checkers.buttons;
 
-import com.checkers.stages.InGameWindow;
-import com.checkers.stages.MenuWindow;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.WindowEvent;
 
 public class ExitButton {
+    private Image playButton = new Image("file:resources/exit.png");
 
     public Button showButton(){
 
-        Image playButton = new Image("file:resources/exit.png");
         Button button = new Button();
         button.setGraphic(new ImageView(playButton));
 

@@ -1,19 +1,15 @@
 package com.checkers;
 
-import com.checkers.background.BackgroundCreator;
-import com.checkers.stages.InGameWindow;
-import com.checkers.stages.MenuWindow;
+import com.checkers.scenes.MenuScene;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
-import java.awt.*;
+
 
 public class Checkers extends Application {
+
+    Image miniature = new Image("file:resources/miniature.png");
 
     public static void main(String[] args){
         launch(args);
@@ -21,7 +17,11 @@ public class Checkers extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        MenuWindow menuWindow = new MenuWindow();
+        //Stage properties
+        stage.setTitle("Checkers");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("miniature.png")));
+
+        MenuScene menuWindow = new MenuScene();
         menuWindow.window(stage);
 
 

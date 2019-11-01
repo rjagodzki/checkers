@@ -1,4 +1,4 @@
-package com.checkers.stages;
+package com.checkers.scenes;
 
 import javafx.scene.image.Image;
 import javafx.stage.Stage;

@@ -9,27 +9,29 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class PlayButton{
+public class ResumeLastGameButton {
 
-    private Image playButtonImage = new Image("file:resources/play.png");
+    private Image resumeLastGameButton = new Image("file:resources/resumeLastGame.png");
 
     public Button showButton(Stage stage){
-        NewOrResumeGameScene newOrResumeGameScene = new NewOrResumeGameScene();
+
+        InGameScene inGameScene = new InGameScene();
+
         //Creating button
         Button button = new Button();
-        button.setGraphic(new ImageView(playButtonImage));
+        button.setGraphic(new ImageView(resumeLastGameButton));
 
         //Button's properties
         button.setStyle("-fx-background-color:  transparent");
 
         //Button's EventHandler
         button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent event) {
-                newOrResumeGameScene.scene(stage);
+            @Override
+            public void handle(ActionEvent event) {
+                inGameScene.scene(stage);
                 System.out.println("TO dziala?");
             }
         });
         return button;
-
     }
 }
