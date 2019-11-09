@@ -1,12 +1,11 @@
 package com.checkers.scenes;
 
-import com.checkers.background.BackgroundCreator;
 import com.checkers.buttons.BackButton;
 import com.checkers.buttons.CreateNewGameButton;
 import com.checkers.buttons.ResumeLastGameButton;
 import com.checkers.label.MainLabel;
-
 import com.checkers.scenes.template.SceneCreator;
+
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
@@ -15,9 +14,7 @@ import javafx.stage.Stage;
 
 public class NewOrResumeGameScene {
 
-    private Image backgroundImage = new Image("file:resources/menu.jpg");
-
-    public void scene(Stage stage){
+    public void scene(Stage mainStage){
 
         //Taking scene and grid from template
         SceneCreator sceneCreator = new SceneCreator();
@@ -32,9 +29,9 @@ public class NewOrResumeGameScene {
 
         //Adding label and buttons
         grid.add(mainLabel.showLabelForMainMenu(),0,0);
-        grid.add(createNewGameButton.showButton(stage),0,2);
-        grid.add(resumeLastGameButton.showButton(stage),0,3);
-        grid.add(backButton.showBigButton(stage),0,4);
+        grid.add(createNewGameButton.showButton(mainStage),0,2);
+        grid.add(resumeLastGameButton.showButton(mainStage),0,3);
+        grid.add(backButton.showBigButton(mainStage),0,4);
 
         for (int i = 0; i <= 4; i++) {
             RowConstraints con = new RowConstraints();
@@ -42,7 +39,7 @@ public class NewOrResumeGameScene {
             grid.getRowConstraints().add(con);
         }
 
-        stage.setScene(scene);
-        stage.show();
+        mainStage.setScene(scene);
+        mainStage.show();
     }
 }

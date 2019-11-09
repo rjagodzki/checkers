@@ -16,7 +16,7 @@ public class ScoreboardWindow {
 
     private Image backgroundImage = new Image("file:resources/menu.jpg");
 
-    public void window(Stage stage){
+    public void window(Stage mainStage){
         BackgroundCreator backgroundCreator = new BackgroundCreator();
         BackButton backButton = new BackButton();
         MainLabel mainLabel = new MainLabel();
@@ -30,7 +30,7 @@ public class ScoreboardWindow {
         gird.setAlignment(Pos.CENTER_RIGHT);
 
         gird.add(mainLabel.showLabelForScoreboard(),0,0);
-        gird.add(backButton.showSmallButton(stage),0,10);
+        gird.add(backButton.showSmallButton(mainStage),0,10);
 
         for (int i = 0; i <= 10; i++) {
             RowConstraints con = new RowConstraints();
@@ -38,7 +38,7 @@ public class ScoreboardWindow {
             gird.getRowConstraints().add(con);
         }
 
-        stage.setScene(scene);
-        stage.show();
+        mainStage.setScene(scene);
+        mainStage.show();
     }
 }

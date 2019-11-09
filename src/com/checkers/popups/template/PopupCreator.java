@@ -1,22 +1,19 @@
-package com.checkers.scenes.template;
+package com.checkers.popups.template;
 
 import com.checkers.background.BackgroundCreator;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-public class SceneCreator {
+public class PopupCreator {
 
-    private Image mainBackground = new Image("file:resources/menu.jpg");
 
-    public Scene mainScene(){
-        //Creating background of menu window
-        BackgroundCreator backgroundCreator = new BackgroundCreator();
+    public Scene scene(){
         GridPane gird = new GridPane();
-        gird.setBackground(backgroundCreator.setBackground(mainBackground));
+
 
         //Gird properties
         gird.setHgap(10);
@@ -26,10 +23,10 @@ public class SceneCreator {
         gird.setAlignment(Pos.CENTER);
 
         //Creating scene
-        Scene scene = new Scene(gird, 1200, 800, Color.WHITE);
-
+        Scene scene = new Scene(gird, 200, 150, Color.WHITE);
 
 
         return scene;
     }
+
 }

@@ -1,5 +1,6 @@
 package com.checkers.buttons;
 
+import com.checkers.popups.NewPlayer;
 import com.checkers.scenes.InGameScene;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,8 +12,10 @@ import javafx.stage.Stage;
 public class CreateNewGameButton {
 
     private Image createNewGameButton = new Image("file:resources/createNewGame.png");
-    public Button showButton(Stage stage){
+    public Button showButton(Stage mainStage){
 
+        Stage popup = new Stage();
+        NewPlayer newPlayer = new NewPlayer();
         InGameScene inGameScene = new InGameScene();
 
         //Creating button
@@ -26,7 +29,8 @@ public class CreateNewGameButton {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                inGameScene.scene(stage);
+                newPlayer.newPlayerScene(popup);
+                inGameScene.scene(mainStage);
                 System.out.println("TO dziala?");
             }
         });

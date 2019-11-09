@@ -15,10 +15,11 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class MenuScene implements StagesInterface {
+public class MenuScene{
 
-    @Override
-    public void window(Stage stage) {
+    private  Stage mainStage;
+
+    public void window(Stage mainStage) {
         //Taking scene and grid from template
         SceneCreator sceneCreator = new SceneCreator();
         Scene scene = sceneCreator.mainScene();
@@ -32,8 +33,8 @@ public class MenuScene implements StagesInterface {
 
         //Menu with buttons
         grid.add(label.showLabelForMainMenu(),0,0);
-        grid.add(playButton.showButton(stage),0,2);
-        grid.add(scoreboardButton.showButton(stage),0,3);
+        grid.add(playButton.showButton(mainStage),0,2);
+        grid.add(scoreboardButton.showButton(mainStage),0,3);
         grid.add(exitButton.showButton(),0,4);
         for (int i = 0; i <= 3; i++) {
             RowConstraints con = new RowConstraints();
@@ -41,9 +42,17 @@ public class MenuScene implements StagesInterface {
             grid.getRowConstraints().add(con);
         }
 
-        stage.setScene(scene);
+        mainStage.setScene(scene);
 
-        stage.show();
+        mainStage.show();
+    }
+
+    public Stage getMainStage() {
+        return mainStage;
+    }
+
+    public void setMainStage(Stage mainStage) {
+        this.mainStage = mainStage;
     }
 }
 
